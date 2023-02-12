@@ -20,8 +20,6 @@ const SingUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
-
   const resetFormField = () => {
     setFormFields(defaultFields);
   };
@@ -38,7 +36,7 @@ const SingUpForm = () => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
-      return alert("Passwords do not much");
+      return alert("Passwords do not match");
     }
 
     try {
