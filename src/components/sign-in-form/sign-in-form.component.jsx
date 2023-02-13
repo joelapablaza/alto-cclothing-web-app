@@ -6,7 +6,6 @@ import "./sign-in-form.styles.scss";
 
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   singInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
@@ -24,19 +23,14 @@ const SingInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await singInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      console.log(response);
+      await singInAuthUserWithEmailAndPassword(email, password);
       resetFormField();
     } catch (error) {
       if (
