@@ -2,16 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/Navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
-
-// QUEDE EN CAPITULO 6 CLASE 15
-
-const Shop = () => {
-  return (
-    <div>
-      <h2>Soy Shopping</h2>
-    </div>
-  );
-};
+import Shop from "./components/shop/shop.component";
 
 const App = () => {
   return (
